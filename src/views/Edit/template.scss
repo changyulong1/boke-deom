@@ -1,3 +1,15 @@
-div{
-  color: red;
+.parent-Edit{
+  width: 1200px;
+  margin: 0 auto;
+  .Edit{
+    margin-top: 20px;
+    P{
+      color: #000;
+      margin: 10px 0;
+    }
+  }
+  .el-button{
+    margin: 20px 0;
+  }
+
 }

@@ -1,17 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <router-view/>
+    <Header></Header>
+    <router-view class="main"/>
+    <Footer></Footer>
   </div>
 </template>
 
+<script>
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+export default {
+  components: {Footer, Header}
+}
+</script>
+
 <style lang="scss">
+@import url('./assets/root.scss');
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  >.main{
+    flex: 1;
+    padding: 0 12%;
+    margin-top: 16px;
+  }
 }
 
 #nav {

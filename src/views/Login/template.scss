@@ -1,3 +1,20 @@
-div{
-  color: red;
+.parent-Login {
+  width: 800px;
+  margin: 0 auto;
+  .Login{
+    P{
+      color: #000;
+      margin: 10px 0;
+    }
+    .el-input{
+      margin-bottom: 20px;
+    }
+    .el-button{
+      margin: 20px 0;
+    }
+  }
+  .Login-footer{
+    text-align: center;
+    padding: 40px;
+  }
 }

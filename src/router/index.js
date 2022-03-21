@@ -32,7 +32,7 @@ const routes = [
     component: Create//创造页Create
   },  {
     path: '/Register',
-    component: Register//登记页  Register
+    component: Register//注册页  Register
   },  {
     path: '/User',
     component: User//使用者 User
