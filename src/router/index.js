@@ -18,27 +18,27 @@ const routes = [
     component: Index//首页页Index
   },
   {
-    path: '/',
+    path: '/Login',
     component: Login//登录页Login
   },
   {
-    path: '/',
+    path: '/Detail',
     component: Detail//Detail 详情页
   },  {
-    path: '/',
+    path: '/Edit',
     component: Edit//编辑页Edit
   },  {
-    path: '/',
+    path: '/Create',
     component: Create//创造页Create
   },  {
-    path: '/',
+    path: '/Register',
     component: Register//登记页  Register
   },  {
-    path: '/',
+    path: '/User',
     component: User//使用者 User
   },
   {
-    path: '/',
+    path: '/My',
     component: My// 我的 My
   },
 ]
