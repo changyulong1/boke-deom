@@ -2,7 +2,12 @@
   padding: 16px 0;
   border-bottom: 1px solid #000000;
   .left{
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    >img{
+      width: 40%;
+      border-radius: 50%;
+    }
   }
   .right{
     margin-bottom: 4px;
@@ -24,9 +29,13 @@
       flex-direction: column;
       justify-content: space-between;
       padding: 0 5px;
-      text-align: center;
+      align-items: center;
       .img{
-        width: 100%;
+        width: 40%;
+        >img{
+          width: 100%;
+          border-radius: 50%;
+        }
       }
       .text {
         padding: 10px 0;

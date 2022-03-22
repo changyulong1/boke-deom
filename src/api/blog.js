@@ -41,8 +41,8 @@ export default {
         return request(URL.DELETE.replace(':blogId',blogId),'DELETE')
     },
     //创建博客
-    createBlog({title,content,atIndex}){
-        return request(URL.CREATE,'POST',{title,content,atIndex})
+    createBlog({ title = '', content = '', description = '', atIndex = false} = { title: '', content: '', description: '', atIndex: false}) {
+        return request(URL.CREATE, 'POST', { title, content, description, atIndex })
     }
 
 }

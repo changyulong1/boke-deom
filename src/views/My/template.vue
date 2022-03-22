@@ -2,12 +2,12 @@
   <div>
     <div>
       <el-row class="user">
-        <el-col :span="2">
+        <el-col :span="4">
           <div class=" left grid-content bg-purple">
-            图片
+            <img src="@/assets/log.jpg" alt="头像"/>
           </div>
         </el-col>
-        <el-col :span="22">
+        <el-col :span="20">
           <div class=" right grid-content bg-purple-light">
             <h3>小明</h3>
           </div>
@@ -17,8 +17,8 @@
         <section>
           <el-col :span="4" class="parent">
             <div class="left">
-              <div class="img">ty</div>
-              <div class="text">ypur</div>
+              <div class="img"><img src="@/assets/log.jpg" alt="头像"/></div>
+              <div class="text">小明</div>
             </div>
           </el-col>
           <el-col :span="20">

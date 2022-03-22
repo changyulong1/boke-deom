@@ -1,7 +1,7 @@
 <template>
   <div>
     <header v-if="!isLogin">
-      <h1>LET'S SHARE</h1>
+      <h1><router-link to="/">LET'S SHARE</router-link></h1>
       <p>精品博客汇聚</p>
       <div class="btn">
         <router-link to="/Login"><el-button>立即登录</el-button></router-link>
@@ -9,12 +9,14 @@
       </div>
     </header>
     <header v-if="isLogin" class="user-header">
-    <h1>LET'S SHARE</h1>
+      <h1><router-link to="/">LET'S SHARE</router-link></h1>
       <span></span>
       <div class="user">
-        <i class="el-icon-edit"></i>
+        <router-link to="/Create"><i class="el-icon-plus"></i></router-link>
         <div class="user-go">
-          <el-avatar icon="el-icon-user-solid"></el-avatar>
+          <el-avatar :size="60" src="@/assets/log.jpg" >
+            <img src="@/assets/log.jpg"/>
+          </el-avatar>
           <ul>
             <li>我的</li>
             <li @click="logout">注销</li>
@@ -40,7 +42,10 @@ export default {
     this.checkLogin()
   },
   methods:{
-    ...mapActions(['checkLogin','logout'])
+    ...mapActions(['checkLogin','logout']),
+    errorHandler() {
+      return true
+    }
 
   }
 
@@ -73,11 +78,16 @@ export default {
       justify-content: space-between;
       h1{
         margin: 0;
+        display: flex;
+        align-items: center;
       }
       .user{
         display: flex;
         align-items: center;
-        .el-icon-edit{
+        a{
+          color: white;
+        }
+        .el-icon-plus{
           margin: 0 20px;
           font-size: 30px;
         }

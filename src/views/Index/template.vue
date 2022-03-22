@@ -3,7 +3,7 @@
     <section>
       <el-col :span="4" class="parent">
         <div class="left">
-          <div class="img">ty</div>
+          <div class="img"><img src="@/assets/log.jpg" alt="头像"/></div>
           <div class="text">ypur</div>
         </div>
    </el-col>
@@ -17,7 +17,7 @@
     <section>
       <el-col :span="4" class="parent">
         <div class="left">
-          <div class="img">ty</div>
+          <div class="img"><img src="@/assets/log.jpg" alt="头像"/></div>
           <div class="text">ypur</div>
         </div>
       </el-col>
