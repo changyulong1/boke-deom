@@ -13,7 +13,7 @@
       <span></span>
       <div class="user">
         <i class="el-icon-edit"></i>
-        <div>
+        <div class="user-go">
           <el-avatar icon="el-icon-user-solid"></el-avatar>
           <ul>
             <li>我的</li>
@@ -80,6 +80,14 @@ export default {
         .el-icon-edit{
           margin: 0 20px;
           font-size: 30px;
+        }
+        .user-go{
+          ul{
+            display: none;
+          }
+          &:hover >ul{
+            display: block;
+          }
         }
       }
     }

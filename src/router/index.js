@@ -1,45 +1,49 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Index from "@/views/Index/template.vue";
-import Login from "@/views/Login/template.vue";
-import Detail from "@/views/Detail/template.vue";
-import Edit from "@/views/Edit/template.vue";
-import Create from "@/views/Create/template.vue";
-import Register from "@/views/Register/template.vue";
-import User from "@/views/User/template.vue";
-import My from "@/views/My/template.vue";
+// import Index from "@/views/Index/template.vue";
+// import Login from "@/views/Login/template.vue";
+// import Detail from "@/views/Detail/template.vue";
+// import Edit from "@/views/Edit/template.vue";
+// import Create from "@/views/Create/template.vue";
+// import Register from "@/views/Register/template.vue";
+// import User from "@/views/User/template.vue";
+// import My from "@/views/My/template.vue";
+import store from "@/store";
 
 
 Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/',
-    component: Index//首页页Index
+    path: '/',//首页页Index
+    component: () => import('@/views/Index/template.vue')
   },
   {
-    path: '/Login',
-    component: Login//登录页Login
+    path: '/Login',//登录页Login
+    component: () => import('@/views/Login/template.vue')
   },
   {
-    path: '/Detail',
-    component: Detail//Detail 详情页
+    path: '/Detail',//Detail 详情页
+    component: () => import('@/views/Detail/template.vue')
   },  {
-    path: '/Edit',
-    component: Edit//编辑页Edit
+    path: '/Edit',//编辑页Edit
+    component: () => import('@/views/Index/template.vue'),
+    meta: { requiresAuth: true }
   },  {
-    path: '/Create',
-    component: Create//创造页Create
+    path: '/Create',//创造页Create
+    component: () => import('@/views/Create/template.vue'),
+    meta: { requiresAuth: true }
   },  {
-    path: '/Register',
-    component: Register//注册页  Register
+    path: '/Register',//注册页  Register
+    component: () => import('@/views/Register/template.vue')
   },  {
-    path: '/User',
-    component: User//使用者 User
+    path: '/User',//使用者 User
+    component: () => import('@/views/User/template.vue')
   },
   {
-    path: '/My',
-    component: My// 我的 My
+    path: '/My',// 我的 My
+    component: () => import('@/views/My/template.vue'),
+    meta: { requiresAuth: true }
   },
 ]
 
@@ -48,5 +52,22 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+//路由守卫
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    store.dispatch('checkLogin').then(isLogin=>{
+      if (!isLogin) {
+        next({
+          path: '/login',
+          query: { redirect: to.fullPath }
+        })
+      } else {
+        next()
+      }
+    })
+  } else {
+    console.log(222)
+    next() // 确保一定要调用 next()
+  }
+})
 export default router
