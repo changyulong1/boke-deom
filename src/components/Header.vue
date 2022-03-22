@@ -4,8 +4,8 @@
       <h1>LET'S SHARE</h1>
       <p>精品博客汇聚</p>
       <div class="btn">
-        <el-button>立即登录</el-button>
-        <el-button>注册账号</el-button>
+        <router-link to="/Login"><el-button>立即登录</el-button></router-link>
+        <router-link to="/Register"> <el-button>立即祖册</el-button></router-link>
       </div>
     </header>
     <header v-if="isLogin" class="user-header">
@@ -15,6 +15,10 @@
         <i class="el-icon-edit"></i>
         <div>
           <el-avatar icon="el-icon-user-solid"></el-avatar>
+          <ul>
+            <li>我的</li>
+            <li @click="logout">注销</li>
+          </ul>
         </div>
       </div>
     </header>
@@ -22,12 +26,22 @@
 </template>
 
 <script lang="js">
-
+import {mapGetters,mapActions} from 'vuex'
 export default {
   data(){
-    return{
-      isLogin:false
+    return {
+      // isLogin:false
     }
+  },
+  computed:{
+    ...mapGetters(['user','isLogin'])
+  },
+  created(){
+    this.checkLogin()
+  },
+  methods:{
+    ...mapActions(['checkLogin','logout'])
+
   }
 
 }

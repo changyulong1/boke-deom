@@ -17,7 +17,7 @@
           placeholder="密码"
       >
       </el-input>
-      <el-button type="success">注册账户</el-button>
+      <el-button type="success" @click="onRegister">注册账户</el-button>
     </div>
     <div class="Login-footer">
       <span>没有账号？</span>

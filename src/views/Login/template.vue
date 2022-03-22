@@ -17,7 +17,7 @@
           placeholder="密码"
       >
       </el-input>
-      <el-button type="success">立即登录</el-button>
+      <el-button type="success" @click="onLogin">立即登录</el-button>
     </div>
     <div class="Login-footer">
       <span>没有账号？</span>

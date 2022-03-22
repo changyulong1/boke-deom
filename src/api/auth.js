@@ -23,6 +23,7 @@ export default {
     //判断用户是否登录
     getInfo(){
         return request(URL.GET_INFO)
-    }
+    },
+
 
 }
