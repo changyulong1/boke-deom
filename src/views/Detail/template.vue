@@ -1,6 +1,21 @@
 <template>
   <div>
-    {{ name }}
+    <el-row class="user">
+      <el-col :span="2">
+        <div class=" left grid-content bg-purple">
+          图片
+        </div>
+      </el-col>
+      <el-col :span="22">
+        <div class=" right grid-content bg-purple-light">
+              <h3>前端异步大揭秘</h3>
+              <p><span>name</span><span>发布于3天前</span></p>
+        </div>
+      </el-col>
+    </el-row>
+    <div class="content">
+      <h4>博客内容</h4>
+    </div>
   </div>
 </template>
 

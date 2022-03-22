@@ -1,3 +1,19 @@
-div{
-  color: red;
+.user{
+  padding: 16px 0;
+  border-bottom: 1px solid #000000;
+  .left{
+    text-align: center;
+  }
+  .right{
+    margin-bottom: 4px;
+    span{
+      font-size: 14px;
+      color: #999999;
+      display: inline-block;
+      margin-top: 10px;
+    }
+  }
+}
+.content{
+  margin-top: 16px;
 }

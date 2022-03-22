@@ -5,6 +5,7 @@
       <el-input
           type="text"
           autosize
+          v-model="username"
           placeholder="用户名"
       >
       </el-input>
@@ -12,6 +13,7 @@
       <el-input
           type="password"
           autosize
+          v-model="password"
           placeholder="密码"
       >
       </el-input>

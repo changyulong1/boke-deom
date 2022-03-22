@@ -1,7 +1,9 @@
 export default {
     data(){
         return{
-            name:"创建页"
+            title:'',
+            brief:'',
+            article:''
         }
     }
 }
