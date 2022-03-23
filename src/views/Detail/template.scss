@@ -1,24 +1,26 @@
-.user{
-  padding: 16px 0;
-  border-bottom: 1px solid #000000;
-  .left{
-    display: flex;
-    align-items: center;
-    >img{
-      width: 50%;
-      border-radius: 50%;
+.parent{
+  margin-top: 20px;
+  section{
+    margin-bottom: 20px;
+    padding: 16px;
+    border-bottom: 1px solid #999999;
+    .el-row{
+      width: 100%;
+      .left{
+        text-align: center;
+      }
+      .right{
+        padding: 0 20px;
+        p{
+          font-size: 14px;
+          padding: 10px 0;
+          span{
+            display: inline-block;
+            margin-left: 10px;
+            font-size: 12px;
+          }
+        }
+      }
     }
   }
-  .right{
-    margin-bottom: 4px;
-    span{
-      font-size: 14px;
-      color: #999999;
-      display: inline-block;
-      margin-top: 10px;
-    }
-  }
-}
-.content{
-  margin-top: 16px;
 }

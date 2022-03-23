@@ -1,20 +1,20 @@
 <template>
-  <div>
-    <el-row class="user">
-      <el-col :span="4">
-        <div class=" left grid-content bg-purple">
-          <img src="@/assets/log.jpg" alt="头像"/>
-        </div>
-      </el-col>
-      <el-col :span="20">
-        <div class=" right grid-content bg-purple-light">
-              <h3>前端异步大揭秘</h3>
-              <p><span>name</span><span>发布于3天前</span></p>
-        </div>
-      </el-col>
-    </el-row>
-    <div class="content">
-      <h4>博客内容</h4>
+  <div class="parent">
+    <section>
+        <el-row>
+          <el-col :sm="2"  class="left">
+            <el-avatar :sm="60">
+              <img :src="user.avatar" :alt="user.username"/>
+            </el-avatar>
+          </el-col>
+          <el-col :sm="22"  class="right">
+            <h3>{{ title }}</h3>
+            <P><strong>{{ user.username }}</strong><span>{{ createdAt }}}</span></P>
+          </el-col>
+        </el-row>
+    </section>
+    <div class="content" v-html="newContent">
+
     </div>
   </div>
 </template>
