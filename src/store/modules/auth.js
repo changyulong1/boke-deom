@@ -46,6 +46,7 @@ const actions = {
         commit('serLogin',{isLogin:res.isLogin})
         if(!state.isLogin) return false
         commit('setUser',{user:res.data})
+        return true
     }
 
 }

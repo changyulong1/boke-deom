@@ -43,11 +43,14 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push (location) {
+  return originalPush.call(this, location).catch(err => err)
+}
 //路由守卫
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     store.dispatch('checkLogin').then(isLogin=>{
-      console.log(isLogin)
       if (!isLogin) {
         next({
           path: '/login',
@@ -61,4 +64,5 @@ router.beforeEach((to, from, next) => {
     next() // 确保一定要调用 next()
   }
 })
+
 export default router

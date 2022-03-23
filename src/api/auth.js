@@ -17,7 +17,7 @@ export default {
     },
     //注销登录
     logout(){
-        localStorage.getItem('token')
+        localStorage.removeItem('token')
         return request(URL.LOGOUT)
     },
     //判断用户是否登录

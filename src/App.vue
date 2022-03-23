@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Header></Header>
+    <Header id="header"></Header>
     <router-view class="main"/>
-    <Footer></Footer>
+    <Footer id="footer"></Footer>
   </div>
 </template>
 
@@ -21,15 +21,21 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-  >.main{
-    flex: 1;
-    padding: 0 12%;
-    margin-top: 16px;
+  #header{
+    position: relative;
   }
+  .main{
+    position: relative;
+    padding: 0 12%;
+    margin-bottom: 60px;
+
+  }
+  #footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
 }
 
 #nav {

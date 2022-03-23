@@ -12,7 +12,7 @@ export default  function request(url,type="GET",data={}){
             url,
             method:type
         }
-        if(type.toLowerCase()==='GET'){
+        if(type.toLowerCase()==='get'){
             option.params=data
         }else{
             option.data=data
@@ -21,7 +21,6 @@ export default  function request(url,type="GET",data={}){
             axios.defaults.headers.common['Authorization'] = localStorage.token;
         }
         axios(option).then(res=>{
-                console.log(res.data)
             if(res.data.status==='ok'){
                 if(res.data.token){
                     localStorage.token=res.data.token

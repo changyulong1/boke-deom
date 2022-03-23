@@ -43,10 +43,9 @@ export default {
   },
   methods:{
     ...mapActions(['checkLogin','logout']),
-    errorHandler() {
-      return true
-    }
-
+   onLogout(){
+      this.logout()
+   }
   }
 
 }
@@ -62,6 +61,9 @@ export default {
       h1{
         font-size: 40px;
         margin: 60px 0 0 ;
+        >a{
+          color: white;
+        }
       }
       p{
         margin: 20px 0 0;

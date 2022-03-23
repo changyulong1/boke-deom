@@ -1,22 +1,30 @@
+import blog from '@/api/blog'
+
 export default {
-    data(){
-        return{
-            name:"首页"
+    data() {
+        return {
+            blogs: [],
+            total: 0,
+            page: 1
         }
     },
-    methods:{
-        open() {
-            this.$message('可以维嘉吃饭了');
-        },
-
-        openVn() {
-            const h = this.$createElement;
-            this.$message({
-                message: h('p', null, [
-                    h('span', null, '内容可以是 '),
-                    h('i', { style: 'color: teal' }, '我是小明')
-                ])
-            });
+    created() {
+        this.page = parseInt(this.$route.query.page) || 1
+        blog.getIndexBlogs({page:this.page}).then(res => {
+            this.blogs = res.data
+            this.total = res.total
+            this.page = res.page
+        })
+    },
+    methods: {
+        onPageChange(newPage) {
+            blog.getIndexBlogs({page: newPage}).then(res => {
+                this.blogs = res.data
+                this.total = res.total
+                this.page = res.page
+                this.$router.push({ path: '/', query: { page: newPage}})
+            })
         }
+
     }
 }

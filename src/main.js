@@ -9,6 +9,7 @@ import auth from '@/api/auth'
 window.auth =auth
 Vue.use(ElementUI);
 
+
 Vue.config.productionTip = false
 
 new Vue({
