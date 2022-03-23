@@ -9,7 +9,7 @@
           </el-col>
           <el-col :sm="22"  class="right">
             <h3>{{ title }}</h3>
-            <P><strong>{{ user.username }}</strong><span>{{ createdAt }}}</span></P>
+            <P><strong>{{ user.username }}</strong><span>{{ dayDate(createdAt) }}}</span></P>
           </el-col>
         </el-row>
     </section>

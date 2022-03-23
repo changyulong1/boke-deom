@@ -10,7 +10,7 @@
             <div class="text">{{ blog.user.username }}</div>
           </el-col>
           <el-col :sm="22"  class="right">
-            <h3 class="title">{{ blog.title }}<span>{{ blog.createdAt }}</span></h3>
+            <h3 class="title">{{ blog.title }}<span>{{ dayDate(blog.createdAt) }}</span></h3>
             <p>
               {{ blog.description }}
             </p>

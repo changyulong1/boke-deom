@@ -5,10 +5,9 @@ import router from './router'
 import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import auth from '@/api/auth'
-window.auth =auth
+import uilt from '@/helpers/util'
 Vue.use(ElementUI);
-
+Vue.use(uilt)
 
 Vue.config.productionTip = false
 
