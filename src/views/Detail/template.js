@@ -1,4 +1,6 @@
-import marked from 'marked'
+import { marked } from 'marked';
+
+console.log(marked);
 import blog from '@/api/blog'
 export default {
     data(){

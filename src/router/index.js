@@ -18,7 +18,7 @@ const routes = [
     component: () => import('@/views/Detail/template.vue')
   },  {
     path: '/Edit/:blogId',//编辑页Edit
-    component: () => import('@/views/Index/template.vue'),
+    component: () => import('@/views/Edit/template.vue'),
     meta: { requiresAuth: true }
   },  {
     path: '/Create',//创造页Create

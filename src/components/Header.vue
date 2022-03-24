@@ -18,7 +18,7 @@
             <img src="@/assets/log.jpg"/>
           </el-avatar>
           <ul>
-            <li>我的</li>
+            <li><router-link to="/my">我的</router-link></li>
             <li @click="logout">注销</li>
           </ul>
         </div>

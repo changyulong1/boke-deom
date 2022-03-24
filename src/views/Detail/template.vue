@@ -13,7 +13,7 @@
           </el-col>
         </el-row>
     </section>
-    <div class="content" v-html="newContent">
+    <div class="content" v-html="markdown">
 
     </div>
   </div>

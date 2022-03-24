@@ -1,42 +1,37 @@
 <template>
-  <div>
-    <div>
-      <el-row class="user">
-        <el-col :span="4">
-          <div class=" left grid-content bg-purple">
-            <img src="@/assets/log.jpg" alt="头像"/>
-          </div>
-        </el-col>
-        <el-col :span="20">
-          <div class=" right grid-content bg-purple-light">
-            <h3>小明</h3>
-          </div>
-        </el-col>
-      </el-row>
-      <div class="content">
-        <section>
-          <el-col :span="4" class="parent">
-            <div class="left">
-              <div class="img"><img src="@/assets/log.jpg" alt="头像"/></div>
-              <div class="text">小明</div>
-            </div>
-          </el-col>
-          <el-col :span="20">
-            <div class="right">
-              <div class="title"><h3>前端异步大揭秘</h3><span>3天前</span></div>
-              <p>本文以一个简单的文件读写为例，讲解了异步的不同写法，包括 普通的 callback、ES2016中的Promise和Generator、 Node 用于解决回调的co 模块、ES2017中的async/await。适合初步接触 Node.js以及少量 ES6语法的同学阅读</p>
-              <el-button>编辑</el-button>
-              <el-button>删除</el-button>
-            </div>
-          </el-col>
-        </section>
-      </div>
-    </div>
+  <div id="user">
+    <section class="user-info">
+      <img :src="user.avatar" :alt="user.username" class="avatar">
+      <h3>{{user.username}}</h3>
+    </section>
+    <section>
+      <router-link class="item" v-for="blog in blogs" :key="blog.id" :to="`/detail/${blog.id}`">
+        <div class="date">
+          <span class="day">{{splitDate(blog.createdAt).date}}</span>
+          <span class="month">{{splitDate(blog.createdAt).month}}月</span>
+          <span class="year">{{splitDate(blog.createdAt).year}}</span>
+        </div>
+        <h3>{{blog.title}}</h3>
+        <p>{{blog.description}}</p>
+        <div class="actions">
+          <router-link :to="`/edit/${blog.id}`">编辑</router-link>
+          <a href="#" @click.prevent="onDelete(blog.id)">删除</a>
+        </div>
+      </router-link>
+    </section>
+    <section class="pagination">
+      <el-pagination
+          layout="prev, pager, next"
+          :total="total"
+          :current-page="page"
+          @current-change="onPageChange">
+      </el-pagination>
+    </section>
   </div>
 </template>
 
-<script lang="js" src="./template.js">
 
-</script>
 
-<style lang="scss" scoped src="./template.scss"></style>
+<script src="./template.js"></script>
+
+<style src="./template.scss" lang="scss"></style>
