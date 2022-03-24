@@ -4,9 +4,12 @@
       <router-link class="parent-Login" v-for="blog in blogs" :to="`/detail/${blog.id}`" :key="blog.id">
         <el-row>
           <el-col :sm="2"  class="left">
-            <el-avatar :sm="60">
-              <img :src="blog.user.avatar" alt="blog.user.username"/>
-            </el-avatar>
+
+            <router-link :to="`/User/${blog.user.id}`">
+              <el-avatar :sm="60">
+                <img :src="blog.user.avatar" alt="blog.user.username"/>
+              </el-avatar>
+            </router-link>
             <div class="text">{{ blog.user.username }}</div>
           </el-col>
           <el-col :sm="22"  class="right">

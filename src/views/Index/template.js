@@ -14,6 +14,7 @@ export default {
             this.blogs = res.data
             this.total = res.total
             this.page = res.page
+            console.log(res.data)
         })
     },
     methods: {
