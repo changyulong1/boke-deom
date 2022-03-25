@@ -1,7 +1,7 @@
-import { marked } from 'marked';
+import marked from 'marked';
 
-console.log(marked);
 import blog from '@/api/blog'
+import 'github-markdown-css/github-markdown.css'
 export default {
     data(){
         return{
@@ -25,6 +25,7 @@ export default {
     },
     computed:{
         markdown(){
+            console.log(marked(this.newContent))
             return marked(this.newContent)
         }
     }

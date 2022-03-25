@@ -1,38 +1,24 @@
 <template>
-  <div class="parent">
-    <section>
-      <router-link class="parent-Login" v-for="blog in blogs" :to="`/detail/${blog.id}`" :key="blog.id">
-        <el-row>
-          <el-col :sm="2"  class="left">
-
-            <router-link :to="`/User/${blog.user.id}`">
-              <el-avatar :sm="60">
-                <img :src="blog.user.avatar" alt="blog.user.username"/>
-              </el-avatar>
-            </router-link>
-            <div class="text">{{ blog.user.username }}</div>
-          </el-col>
-          <el-col :sm="22"  class="right">
-            <h3 class="title">{{ blog.title }}<span>{{ dayDate(blog.createdAt) }}</span></h3>
-            <p>
-              {{ blog.description }}
-            </p>
-          </el-col>
-        </el-row>
+  <el-col :sm="20" id="index">
+    <section class="blog-posts">
+      <router-link class="item" v-for="blog in blogs" :to="`/detail/${blog.id}`" :key="blog.id">
+        <figure class="avatar">
+          <img :src="blog.user.avatar" :alt="blog.user.username">
+          <figcaption>{{blog.user.username}}</figcaption>
+        </figure>
+        <h3>{{blog.title}}<span> {{dayDate(blog.createdAt)}}</span></h3>
+        <p>{{blog.description}}</p>
       </router-link>
     </section>
     <section class="pagination">
       <el-pagination
-          background
           layout="prev, pager, next"
           :total="total"
           :current-page="page"
           @current-change="onPageChange">
       </el-pagination>
-      {{ page }}
     </section>
-
-  </div>
+  </el-col>
 </template>
 
 <script lang="js" src="./template.js">

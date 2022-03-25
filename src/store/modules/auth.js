@@ -20,6 +20,7 @@ const mutations ={
 const actions = {
     //登录
     login({commit},{username,password}){
+        console.log(username,password)
        return auth.login({username,password})
            .then(res=>{
                commit('setUser',{user:res.date})

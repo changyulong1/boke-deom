@@ -1,13 +1,13 @@
 <template>
   <div class="parent-Login">
-    <el-col :sm="12" class="Login">
+    <div class="Login">
       <p>用户名</p>
       <el-input
           type="text"
           autosize
           v-model="username"
           placeholder="用户名"
-          >
+      >
       </el-input>
       <p>密码</p>
       <el-input
@@ -20,14 +20,45 @@
       <el-button type="success" @click="onLogin">立即登录</el-button>
       <div class="Login-footer">
         <el-link>没有账户？</el-link>
-        <router-link to="/Register">立即注册</router-link>
+        <el-link type="primary">注册账户</el-link>
       </div>
-    </el-col>
+    </div>
   </div>
 </template>
 
-<script lang="js" src="./template.js">
+<script lang="js">
 
+export default{
+
+}
 </script>
 
-<style lang="scss" scoped src="./template.scss"></style>
+<style lang="scss" scoped>
+.parent-Login {
+  position: relative;
+  .Login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    margin: 0 auto;
+    P{
+      color: #000;
+      margin: 20px 0;
+    }
+    .el-input{
+      margin-bottom: 20px;
+    }
+    .el-button{
+      margin: 20px 0;
+    }
+  }
+  .Login-footer{
+    text-align: center;
+    padding: 40px;
+  }
+}
+
+
+</style>

@@ -1,4 +1,6 @@
 #my,#user {
+  margin: 0 auto;
+  padding: 20px;
   .user-info {
     display: grid;
     grid: auto auto / 80px 1fr;
@@ -23,46 +25,36 @@
   }
 
   .item {
-    display: grid;
-    grid: auto  auto auto / 80px 1fr;
-    margin: 20px 0;
-
+    display: flex;
+    margin-bottom: 20px;
     .date {
-      grid-column: 1;
-      grid-row: 1 / span 3;
-      justify-self: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       text-align: center;
-
+      padding:0 16px;
       span {
-        display: block;
         color: #999;
       }
-
       .day {
         font-size: 40px;
       }
     }
-
-    h3 {
-      grid-column: 2;
-      grid-row: 1;
-    }
-
     p {
-      grid-column: 2;
-      grid-row: 2;
-      margin-top: 0;
+      font-size: 14px;
+      padding: 10px 0;
+      text-align: justify;
+      word-wrap: break-word;
+      word-break: break-word;
     }
-
     .actions {
-      grid-column: 2;
-      grid-row: 3;
-      font-size: 12px;
-
+      .el-button{
+        margin-right: 16px;
+        border: none;
+      }
       a {
         color: rgba(0, 153, 51, 0.6);
       }
-
     }
 
   }

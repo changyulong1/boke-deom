@@ -1,11 +1,11 @@
 <template>
-  <div class="parent-Register">
-    <div class="Register">
+  <div class="parent-Login">
+    <el-col :sm="12" class="Login">
       <p>用户名</p>
       <el-input
           type="text"
           autosize
-          v-model="username"
+          v-model="userName"
           placeholder="用户名"
       >
       </el-input>
@@ -13,21 +13,19 @@
       <el-input
           type="password"
           autosize
-          v-model="password"
+          v-model="Password"
           placeholder="密码"
       >
       </el-input>
-      <el-button type="success" @click="onRegister">注册账户</el-button>
-    </div>
-    <div class="Login-footer">
-      <span>没有账号？</span>
-      <a href="#">立即注册</a>
-    </div>
+      <el-button type="success" @click="onRegister">立即注册</el-button>
+      <div class="Login-footer">
+        <el-link>已有账号？</el-link>
+        <router-link to="/Login">立即登录</router-link>
+      </div>
+    </el-col>
   </div>
 </template>
 
-<script lang="js" src="./template.js">
+<script lang="js" src="./template.js"></script>
 
-</script>
-
-<style lang="scss" scoped src="./template.scss"></style>
+<style lang="scss" scoped src="../Login/template.scss"></style>

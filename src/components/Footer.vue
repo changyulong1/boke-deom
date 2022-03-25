@@ -15,7 +15,8 @@ export default {
     div{
       text-align: center;
       padding: 20px;
-      background: #cccccc;
+      background: #2c3e50;
+      color: #ebebeb;
     }
 
 </style>

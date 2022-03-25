@@ -1,25 +1,27 @@
 <template>
-  <div class="parent">
-    <section>
-        <el-row>
-          <el-col :sm="2"  class="left">
-            <el-avatar :sm="60">
+  <el-col :sm="20" class="parent">
+   <div  class="wrap">
+     <section>
+         <div class="left">
+            <router-link :to="`/User/${user.id}`">
+              <el-avatar :sm="60">
               <img :src="user.avatar" :alt="user.username"/>
             </el-avatar>
-          </el-col>
-          <el-col :sm="22"  class="right">
-            <h3>{{ title }}</h3>
-            <P><strong>{{ user.username }}</strong><span>{{ dayDate(createdAt) }}}</span></P>
-          </el-col>
-        </el-row>
-    </section>
-    <div class="content" v-html="markdown">
-
-    </div>
-  </div>
+            </router-link>
+         </div>
+         <div class="right">
+           <h3>{{ title }}</h3>
+           <P><strong>{{ user.username }}</strong><span>{{ dayDate(createdAt)}}</span></P>
+         </div>
+     </section>
+     <article   class="markdown-body" v-html="markdown">
+     </article >
+   </div>
+  </el-col>
 </template>
 
 <script lang="js" src="./template.js">
+
 
 </script>
 

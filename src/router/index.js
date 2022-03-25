@@ -36,6 +36,11 @@ const routes = [
     component: () => import('@/views/My/template.vue'),
     meta: { requiresAuth: true }
   },
+  {
+    path: '/kong',// 我的 My
+    component: () => import('@/views/Kong.vue'),
+    meta: { requiresAuth: true }
+  },
 ]
 
 const router = new VueRouter({

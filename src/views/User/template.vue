@@ -1,11 +1,11 @@
 <template>
-  <div id="user">
+  <el-col :sm="20" id="user">
     <section class="user-info">
       <img :src="user.avatar" :alt="user.username" class="avatar">
       <h3>{{ user.username }}</h3>
     </section>
     <section>
-      <router-link class="item" to="" v-for="blog in blogs" :key="blog.id">
+      <router-link class="item" :to="`/Edit/${blog.id}`" v-for="blog in blogs" :key="blog.id">
         <div class="date">
           <span class="day">{{splitDate(blog.createdAt).date  }}</span>
           <span class="month">{{splitDate(blog.createdAt).month  }}</span>
@@ -25,7 +25,7 @@
       </el-pagination>
 
     </section>
-  </div>
+  </el-col>
 </template>
 
 <script src="./template.js"></script>

@@ -1,9 +1,11 @@
 <template>
-  <div id="user">
+  <el-col :sm="20" id="user">
+    <router-link :to="`/User/${user.id}`">
     <section class="user-info">
-      <img :src="user.avatar" :alt="user.username" class="avatar">
-      <h3>{{user.username}}</h3>
+       <img :src="user.avatar ||''" :alt="user.username" class="avatar">
+       <h3>昵称：{{user.username}}</h3>
     </section>
+    </router-link>
     <section>
       <router-link class="item" v-for="blog in blogs" :key="blog.id" :to="`/detail/${blog.id}`">
         <div class="date">
@@ -11,12 +13,18 @@
           <span class="month">{{splitDate(blog.createdAt).month}}月</span>
           <span class="year">{{splitDate(blog.createdAt).year}}</span>
         </div>
-        <h3>{{blog.title}}</h3>
-        <p>{{blog.description}}</p>
-        <div class="actions">
-          <router-link :to="`/edit/${blog.id}`">编辑</router-link>
-          <a href="#" @click.prevent="onDelete(blog.id)">删除</a>
-        </div>
+       <div>
+         <h3>{{blog.title}}</h3>
+         <p>{{blog.description}}</p>
+         <div class="actions">
+           <router-link :to="`/edit/${blog.id}`">
+             <el-button type="primary" plain>编辑</el-button>
+           </router-link>
+           <a href="#" @click.prevent="onDelete(blog.id)">
+             <el-button type="danger" plain>删除</el-button>
+           </a>
+         </div>
+       </div>
       </router-link>
     </section>
     <section class="pagination">
@@ -27,10 +35,8 @@
           @current-change="onPageChange">
       </el-pagination>
     </section>
-  </div>
+  </el-col>
 </template>
-
-
 
 <script src="./template.js"></script>
 

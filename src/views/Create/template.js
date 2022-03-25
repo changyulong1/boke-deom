@@ -2,10 +2,11 @@ import blog from '@/api/blog'
 export default {
     data(){
         return{
+            userName:'',
             title:'',
             description:'',
             content:'',
-            atIndex:true
+            atIndex:true,
         }
     },
     methods:{

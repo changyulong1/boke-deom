@@ -9,13 +9,15 @@ export default {
     },
     methods:{
         ...mapActions([
-            'login'
+            'login',
+            'checkLogin'
         ]),
         onLogin(){
             this.login({username:this.username,password:this.password})
                 .then(()=>{
-                    console.log(this.$route.query.redirect)
-                    this.$router.push({path: this.$route.query.redirect || '/'})
+                   // this.$router.go(0)
+                   //  this.$router.push({path: this.$route.query.redirect || '/'})
+                    this.$router.push({path: '/'})
                 })
         }
     }

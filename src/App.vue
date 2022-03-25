@@ -21,21 +21,15 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  #header{
-    position: relative;
-  }
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+  justify-content: space-between;
   .main{
     position: relative;
-    padding: 0 12%;
-    margin-bottom: 60px;
-
+    flex: 1;
   }
-  #footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-
 }
 
 #nav {

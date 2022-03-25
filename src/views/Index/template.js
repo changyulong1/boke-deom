@@ -1,4 +1,5 @@
 import blog from '@/api/blog'
+import {mapGetters} from "vuex";
 
 export default {
     data() {
@@ -14,8 +15,10 @@ export default {
             this.blogs = res.data
             this.total = res.total
             this.page = res.page
-            console.log(res.data)
         })
+    },
+    computed:{
+        ...mapGetters(['isLogin'])
     },
     methods: {
         onPageChange(newPage) {
@@ -23,7 +26,7 @@ export default {
                 this.blogs = res.data
                 this.total = res.total
                 this.page = res.page
-                this.$router.push({ path: '/', query: { page: newPage}})
+                this.$router.push({ path: '/'})
             })
         }
 
