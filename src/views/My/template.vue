@@ -33,6 +33,7 @@
     </section>
     <section class="pagination" v-if="blogs.length>0">
       <el-pagination
+          background
           layout="prev, pager, next"
           :total="total"
           :current-page="page"

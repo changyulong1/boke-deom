@@ -26,7 +26,7 @@ export default {
                 this.blogs = res.data
                 this.total = res.total
                 this.page = res.page
-                this.$router.push({ path: '/'})
+                this.$router.push({ path: '/Index',query:{age:newPage}})
             })
         }
 

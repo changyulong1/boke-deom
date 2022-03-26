@@ -28,6 +28,7 @@ export default {
                     this.blogs = res.data
                     this.page = res.page
                     this.total = res.total
+                    this.$router.push({ path: "/my", query: { page: newPage}})
                 })
         },
         splitDate(dataStr) {
