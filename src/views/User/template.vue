@@ -2,9 +2,10 @@
   <el-col :sm="20" id="user">
     <section class="user-info">
       <img :src="user.avatar" :alt="user.username" class="avatar">
-      <h3>{{ user.username }}</h3>
+      <h3>昵称：{{ user.username }}</h3>
     </section>
     <section>
+      <h3 class="title">所有文章</h3>
       <router-link class="item" :to="`/Edit/${blog.id}`" v-for="blog in blogs" :key="blog.id">
         <div class="date">
           <span class="day">{{splitDate(blog.createdAt).date  }}</span>

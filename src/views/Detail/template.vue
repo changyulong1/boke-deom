@@ -14,7 +14,9 @@
            <P><strong>{{ user.username }}</strong><span>{{ dayDate(createdAt)}}</span></P>
          </div>
      </section>
+     <h3 class="title">文章内容</h3>
      <article   class="markdown-body" v-html="markdown">
+
      </article >
    </div>
   </el-col>

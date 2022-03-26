@@ -7,6 +7,7 @@
     </section>
     </router-link>
     <section>
+      <h3 class="title">所有文章</h3>
       <router-link class="item" v-for="blog in blogs" :key="blog.id" :to="`/detail/${blog.id}`">
         <div class="date">
           <span class="day">{{splitDate(blog.createdAt).date}}</span>

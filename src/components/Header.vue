@@ -1,11 +1,9 @@
 <template>
   <div class="parent">
     <el-col :sm="20" class="header">
-
       <div clas="left">
         <h2>
-<!--          <router-link to="/">日记博客</router-link>-->
-          <router-link to="/">{{ isLogin }}</router-link>
+          <router-link to="/">日记博客</router-link>
         </h2>
       </div>
       <div class="tag">
@@ -66,10 +64,6 @@ export default {
       // isLogin:false
       activeIndex3: '1',
       activeIndex2: '1',
-      circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
-      squareUrl: "https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png",
-      sizeList: ["large", "medium", "small"]
-
     }
   },
   computed: {
@@ -81,9 +75,7 @@ export default {
   methods: {
     ...mapActions(['checkLogin', 'logout']),
     onLogout() {
-      this.logout().then(() => {
-        this.$router.push('/Login')
-      })
+      this.logout()
     },
     handleSelect(key, keyPath) {
       console.log(key, keyPath);
