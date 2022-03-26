@@ -13,7 +13,6 @@ export default {
         this.page = this.$route.query.page || 1
         blog.getBlogsByUserId(this.user.id, {page: this.page})
             .then(res => {
-                console.log(res)
                 this.blogs = res.data
                 this.page = res.page
                 this.total = res.total
@@ -26,7 +25,6 @@ export default {
         onPageChange(newPage) {
             blog.getBlogsByUserId(this.userId, {page: newPage})
                 .then(res => {
-                    console.log(res)
                     this.blogs = res.data
                     this.page = res.page
                     this.total = res.total

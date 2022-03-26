@@ -16,7 +16,7 @@
             text-color="#fff"
             active-text-color="#ffd04b">
           <el-menu-item index="1">
-            <router-link to="/">首页</router-link>
+            <router-link to="/Index">首页</router-link>
           </el-menu-item>
           <el-menu-item index="2">
             <router-link to="/My">我的</router-link>
@@ -36,7 +36,7 @@
             text-color="#fff"
             >
           <el-menu-item index="1">
-            <router-link to="/Login">登录</router-link>
+            <router-link to="/">登录</router-link>
           </el-menu-item>
           <el-menu-item index="2">
             <router-link to="/Register">注册</router-link>
@@ -47,7 +47,7 @@
         <router-link to="/Create"><i class="el-icon-plus"></i></router-link>
         <router-link to="/My">
           <el-avatar :size="40" src="@/assets/log.jpg">
-            <img :src="user.avatar" :alt="user.name"/>
+            <img :src="user.avatar" :alt="user.username"/>
           </el-avatar>
         </router-link>
       </div>
@@ -63,7 +63,8 @@ export default {
     return {
       // isLogin:false
       activeIndex3: '1',
-      activeIndex2: '1',
+      activeIndex2: '1'
+
     }
   },
   computed: {
@@ -75,7 +76,9 @@ export default {
   methods: {
     ...mapActions(['checkLogin', 'logout']),
     onLogout() {
-      this.logout()
+      this.logout().then(()=>{
+        this.$router.push('/')
+      })
     },
     handleSelect(key, keyPath) {
       console.log(key, keyPath);

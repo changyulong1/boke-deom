@@ -7,11 +7,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',//首页页Index
-    component: () => import('@/views/Index/template.vue')
+    component: () => import('@/views/Login/template.vue')
   },
   {
-    path: '/Login',//登录页Login
-    component: () => import('@/views/Login/template.vue')
+    path: '/Index',//登录页Login
+    component: () => import('@/views/Index/template.vue')
   },
   {
     path: '/Detail/:blogId',//Detail 详情页

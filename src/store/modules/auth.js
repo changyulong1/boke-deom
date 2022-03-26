@@ -3,9 +3,11 @@ const state = {
     user:null,
     isLogin:false
 }
-const getters ={
-    user:state=>state.user,
-    isLogin:state=>state.isLogin
+const getters = {
+    user: state => {
+         return state.user
+    },
+    isLogin: state => state.isLogin
 }
 const mutations ={
     setUser(state,payload){
@@ -19,10 +21,9 @@ const mutations ={
 const actions = {
     //登录
     login({commit},{username,password}){
-        console.log(username,password)
        return auth.login({username,password})
            .then(res=>{
-               commit('setUser',{user:res.date})
+               commit('setUser',{user:res.data})
                commit('serLogin',{isLogin:true})
            })
     },

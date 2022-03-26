@@ -1,7 +1,9 @@
 <template>
   <el-col :sm="20" id="user">
     <section class="user-info">
-      <img :src="user.avatar" :alt="user.username" class="avatar">
+      <el-avatar :size="40" src="@/assets/log.jpg">
+        <img :src="user.avatar" :alt="user.username"/>
+      </el-avatar>
       <h3>昵称：{{ user.username }}</h3>
     </section>
     <section>

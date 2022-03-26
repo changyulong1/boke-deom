@@ -12,8 +12,8 @@ export default {
         onRegister(){
             this.register({username:this.userName,password:this.Password})
                 .then(()=>{
-                    this.$message('恭喜，账户成功')
-                    this.$router.push('/My')
+                    this.$message('恭喜，注册成功')
+                    this.$router.push('/Index')
                 })
         }
     }

@@ -13,7 +13,6 @@ export default {
         this.blogId = this.$route.params.blogId
     blog.getDetail({blogId:this.blogId})
         .then((res)=>{
-            console.log(res)
             this.title = res.data.title
             this.description = res.data.description
             this.content = res.data.content
@@ -23,8 +22,7 @@ export default {
     methods:{
         update(){
             blog.updateBlog({blogId:this.blogId},{title:this.title,content:this.content,description:this.description,atIndex:this.atIndex} )
-                .then((res)=>{
-                    console.log(res)
+                .then(()=>{
                     this.$router.push('/MY')
                 })
         }

@@ -1,13 +1,16 @@
 <template>
   <el-col :sm="20" id="user">
-    <router-link :to="`/User/${user.id}`">
+    <router-link :to="`/My`">
     <section class="user-info">
-       <img :src="user.avatar ||''" :alt="user.username" class="avatar">
+      <el-avatar :size="40" src="@/assets/log.jpg">
+        <img :src="user.avatar" :alt="user.username"/>
+      </el-avatar>
        <h3>昵称：{{user.username}}</h3>
     </section>
     </router-link>
     <section>
       <h3 class="title">所有文章</h3>
+      <p v-if="blogs.length===0">亲，你还没有文章，块创建吧</p>
       <router-link class="item" v-for="blog in blogs" :key="blog.id" :to="`/detail/${blog.id}`">
         <div class="date">
           <span class="day">{{splitDate(blog.createdAt).date}}</span>
@@ -28,7 +31,7 @@
        </div>
       </router-link>
     </section>
-    <section class="pagination">
+    <section class="pagination" v-if="blogs.length>0">
       <el-pagination
           layout="prev, pager, next"
           :total="total"

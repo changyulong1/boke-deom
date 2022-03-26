@@ -26,7 +26,6 @@ export default {
     },
     ///获取id 为 blogId 的博客详
     getDetail({blogId}){
-        console.log(blogId)
         return request(URL.GET_DETAIL.replace(':blogId',blogId))
     },
     //修改博客内容
