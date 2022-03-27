@@ -113,13 +113,6 @@ export default {
     justify-content: space-between;
     align-items: center;
     margin: 0 20px;
-    .but{
-      .el-button{
-        a{
-
-        }
-      }
-    }
     .tag {
       flex: 1;
 
