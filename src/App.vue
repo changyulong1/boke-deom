@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header id="header"></Header>
-    <router-view class="main"/>
+    <router-view class="main" />
     <Footer id="footer"></Footer>
   </div>
 </template>
@@ -10,12 +10,12 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 export default {
-  components: {Footer, Header}
-}
+  components: { Footer, Header },
+};
 </script>
 
 <style lang="scss">
-@import url('./assets/root.scss');
+@import url("./assets/root.scss");
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,7 +26,7 @@ export default {
   height: 100vh;
 
   justify-content: space-between;
-  .main{
+  .main {
     position: relative;
     flex: 1;
   }

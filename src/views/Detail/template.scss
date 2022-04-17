@@ -1,38 +1,55 @@
-.parent{
+.parent {
   margin: 0 auto;
-  .wrap{
-    padding: 20px;
-   section{
-     margin-bottom: 20px;
-     padding: 10px;
 
-     display: flex;
-     .left{
-       margin: 20px;
-       align-items: center;
-     }
-     .right{
-       h3{
-         font-size: 16px;
-         margin-top: 20px;
-         word-break: break-word;
-         word-wrap: break-word;
-       }
-       p{
-         padding: 10px 0;
-         text-align:justify;
-         word-break: break-word;
-         span{
-           font-size: 14px;
-           color: #999999;
-           display: inline-block;
-           margin-left: 10px;
-         }
-       }
-     }
-   }
-    .title{
+
+  .wrap {
+    padding: 20px;
+
+    section {
+      margin-bottom: 20px;
+      padding: 10px;
+      display: flex;
+
+      .left {
+        margin-right: 20px;
+        align-items: center;
+        display: flex;
+        align-items: center;
+      }
+
+      .right {
+        h3 {
+          font-size: 16px;
+          margin-top: 20px;
+          word-break: break-word;
+          word-wrap: break-word;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 200px;
+        }
+
+        p {
+          padding: 10px 0;
+          text-align: justify;
+          word-break: break-word;
+
+          span {
+            font-size: 14px;
+            color: #999999;
+            display: inline-block;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+
+    .title {
       margin: 14px 0;
     }
- }
+  }
+
+  .markdown-body {
+    margin-bottom: 20px;
+  }
 }

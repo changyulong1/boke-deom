@@ -1,5 +1,5 @@
 import blog from '@/api/blog'
-import {mapGetters} from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
     data() {
@@ -11,7 +11,7 @@ export default {
     },
     created() {
         this.page = this.$route.query.page || 1
-        blog.getBlogsByUserId(this.user.id, {page: this.page})
+        blog.getBlogsByUserId(this.user.id, { page: this.page })
             .then(res => {
                 this.blogs = res.data
                 this.page = res.page
@@ -23,12 +23,12 @@ export default {
     },
     methods: {
         onPageChange(newPage) {
-            blog.getBlogsByUserId(this.userId, {page: newPage})
+            blog.getBlogsByUserId(this.userId, { page: newPage })
                 .then(res => {
                     this.blogs = res.data
                     this.page = res.page
                     this.total = res.total
-                    this.$router.push({ path: "/my", query: { page: newPage}})
+                    this.$router.push({ path: "/my", query: { page: newPage } })
                 })
         },
         splitDate(dataStr) {
@@ -39,9 +39,12 @@ export default {
                 year: date.getFullYear()
             }
         },
-        onDelete(blogId){
-            blog.deleteBlog({blogId})
-            this.blogs=this.blogs.filter(blog => blog.id!==blogId)
+        onDelete(blogId) {
+            blog.deleteBlog({ blogId })
+            this.blogs = this.blogs.filter(blog => blog.id !== blogId)
+        },
+        errorHandler() {
+            return true
         }
 
 
