@@ -6,7 +6,7 @@
           <router-link to="/">日记博客</router-link>
         </h2>
       </div>
-      <div class="tag" v-if="isLogin">
+      <!-- <div class="tag" v-if="isLogin">
         <el-menu
           :default-active="activeIndex2"
           class="el-menu-demo"
@@ -27,7 +27,8 @@
           </el-menu-item>
           <el-menu-item index="4" @click="onLogout">退出</el-menu-item>
         </el-menu>
-      </div>
+      </div> -->
+      <Nav />
       <div v-if="!isLogin" class="but">
         <el-menu
           :default-active="activeIndex3"
@@ -50,6 +51,7 @@
 
 <script lang="js">
 import {mapGetters, mapActions} from 'vuex'
+import Nav from "@/components/Nav";
 //v-if="isLogin"
 export default {
   data() {
@@ -60,6 +62,7 @@ export default {
 
     }
   },
+   components: { Nav },
   computed: {
     ...mapGetters(['user', 'isLogin'])
   },
