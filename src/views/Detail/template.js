@@ -38,7 +38,6 @@ export default {
         highlight(el) {
             let blocks = el.querySelectorAll(' pre code');
             blocks.forEach((block) => {
-
                 highlight.highlightAll(block)
             })
 

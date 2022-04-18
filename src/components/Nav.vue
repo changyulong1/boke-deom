@@ -1,7 +1,7 @@
 <template>
   <div class="tag">
     <el-menu
-      default-active="1"
+      :default-active="activeIndex2"
       class="el-menu-demo"
       mode="horizontal"
       background-color="#545c64"
@@ -18,19 +18,25 @@
       <el-menu-item index="3">
         <router-link to="/Create">创建</router-link>
       </el-menu-item>
-      <el-menu-item index="4">退出</el-menu-item>
+      <el-menu-item index="4" @click="onLogout">退出</el-menu-item>
     </el-menu>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
 export default {
-  created() {
-    console.log(666);
-  },
+  props: ["activeIndex2"],
   methods: {
-    handleSelect() {
-      return true;
+    ...mapActions(["logout"]),
+    onLogout() {
+      this.logout().then(() => {
+        localStorage.removeItem("index");
+        this.$router.push("/");
+      });
+    },
+    handleSelect(key) {
+      localStorage.setItem("index", key);
     },
   },
 };
@@ -58,7 +64,6 @@ export default {
         border: none;
 
         .el-menu-item {
-          background: red;
           height: 100%;
           width: 25%;
           margin-left: 0;

@@ -6,29 +6,7 @@
           <router-link to="/">日记博客</router-link>
         </h2>
       </div>
-      <!-- <div class="tag" v-if="isLogin">
-        <el-menu
-          :default-active="activeIndex2"
-          class="el-menu-demo"
-          mode="horizontal"
-          background-color="#545c64"
-          text-color="#fff"
-          active-text-color="#ffd04b"
-          @select="handleSelect"
-        >
-          <el-menu-item index="1">
-            <router-link to="/Index">首页</router-link>
-          </el-menu-item>
-          <el-menu-item index="2">
-            <router-link to="/My">我的</router-link>
-          </el-menu-item>
-          <el-menu-item index="3">
-            <router-link to="/Create">创建</router-link>
-          </el-menu-item>
-          <el-menu-item index="4" @click="onLogout">退出</el-menu-item>
-        </el-menu>
-      </div> -->
-      <Nav />
+      <Nav :activeIndex2="activeIndex2" v-if="isLogin" />
       <div v-if="!isLogin" class="but">
         <el-menu
           :default-active="activeIndex3"
@@ -52,11 +30,9 @@
 <script lang="js">
 import {mapGetters, mapActions} from 'vuex'
 import Nav from "@/components/Nav";
-//v-if="isLogin"
 export default {
   data() {
     return {
-      // isLogin:false
       activeIndex3: '1',
       activeIndex2: '1'
 
@@ -72,18 +48,6 @@ export default {
   },
   methods: {
     ...mapActions(['checkLogin', 'logout']),
-    onLogout() {
-    console.log(2)
-       this.activeIndex2="1"
-        console.log(1,this.activeIndex2)
-      this.logout().then(()=>{
-        localStorage.removeItem('index')
-        this.$router.push('/')
-      })
-    },
-    handleSelect(key) { 
-      localStorage.setItem("index",key)
-    },
     errorHandler(){
       return true
     }
@@ -116,25 +80,10 @@ export default {
     justify-content: space-between;
     align-items: center;
     margin: 0 20px;
-    .tag {
-      flex: 1;
-      .el-menu {
-        border: none;
-        .el-menu-item {
-          text-align: center;
-          margin-left: 16px;
-          > a {
-            display: inline-block;
-            height: 100%;
-          }
-        }
-      }
-    }
 
     .right {
       display: flex;
       align-items: center;
-
       .el-icon-plus {
         margin: 0 20px;
         font-size: 30px;
@@ -162,27 +111,10 @@ export default {
   @media (max-width: 700px) {
     .header {
       h2 {
-        background: red;
         display: none;
       }
-
       .hidden-sm-only {
-        border: 1px solid red;
-        background: red;
         display: none;
-      }
-
-      .tag {
-        .el-menu {
-          border: none;
-
-          .el-menu-item {
-            background: red;
-            height: 100%;
-            width: 25%;
-            margin-left: 0;
-          }
-        }
       }
     }
   }
