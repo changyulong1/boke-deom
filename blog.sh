@@ -14,13 +14,13 @@ cd dist
 
 git init
 git add .
-git commit -m 'deploy'
+git commit -m '更新4'
 git remote add origin git@github.com:changyulong1/boke.git
 
 # 部署到 https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 部署到 https://<USERNAME>.github.io/<REPO>
-git push -u origin master
+git push -f origin master
 
 cd -

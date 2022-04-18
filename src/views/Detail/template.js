@@ -1,8 +1,5 @@
 import marked from 'marked';
 import blog from '@/api/blog'
-// import 'github-markdown-css/github-markdown-light.css'
-import './cyanosis.scss'
-import 'highlight.js/styles/monokai-sublime.css'
 import highlight from 'highlight.js'
 export default {
     data() {
