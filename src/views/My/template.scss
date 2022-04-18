@@ -1,6 +1,8 @@
-#my,#user {
+#my,
+#user {
   margin: 0 auto;
   padding: 20px;
+
   .user-info {
     display: grid;
     grid: auto auto / 80px 1fr;
@@ -23,26 +25,31 @@
       margin-top: 10px;
     }
   }
-  .title{
+
+  .title {
     margin: 14px 0;
   }
 
   .item {
     display: flex;
     margin-bottom: 20px;
+
     .date {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       text-align: center;
-      padding:0 16px;
+      padding: 0 16px;
+
       span {
         color: #999;
       }
+
       .day {
         font-size: 40px;
       }
     }
+
     p {
       font-size: 14px;
       padding: 10px 0;
@@ -50,16 +57,24 @@
       word-wrap: break-word;
       word-break: break-word;
     }
+
     .actions {
-      .el-button{
+      .el-button {
         margin-right: 16px;
         border: none;
       }
+
       a {
         color: rgba(0, 153, 51, 0.6);
       }
     }
 
+  }
+
+  .pagination {
+    display: grid;
+    justify-items: center;
+    margin-bottom: 30px;
   }
 
 }

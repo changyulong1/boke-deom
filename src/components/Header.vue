@@ -44,23 +44,13 @@
           </el-menu-item>
         </el-menu>
       </div>
-      <div class="right hidden-sm-only" v-if="isLogin">
-        <router-link to="/Create"><i class="el-icon-plus"></i></router-link>
-        <router-link to="/My">
-          <el-avatar :size="40" :src="user.avatar" @error="errorHandler">
-            <img
-              src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png"
-            />
-          </el-avatar>
-        </router-link>
-      </div>
     </el-col>
   </div>
 </template>
 
 <script lang="js">
 import {mapGetters, mapActions} from 'vuex'
-
+//v-if="isLogin"
 export default {
   data() {
     return {
@@ -80,12 +70,15 @@ export default {
   methods: {
     ...mapActions(['checkLogin', 'logout']),
     onLogout() {
+    console.log(2)
+       this.activeIndex2="1"
+        console.log(1,this.activeIndex2)
       this.logout().then(()=>{
         localStorage.removeItem('index')
         this.$router.push('/')
       })
     },
-    handleSelect(key) {
+    handleSelect(key) { 
       localStorage.setItem("index",key)
     },
     errorHandler(){

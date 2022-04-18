@@ -1,6 +1,7 @@
 #my,
 #user {
   margin: 0 auto;
+  padding: 20px;
 
   .user-info {
     display: grid;
@@ -73,11 +74,13 @@
       grid-column: 2;
       grid-row: 3;
       font-size: 12px;
-
-      a {}
-
     }
 
   }
 
+  .pagination {
+    display: grid;
+    justify-items: center;
+    margin-bottom: 30px;
+  }
 }

@@ -19,7 +19,7 @@ export default {
             })
     },
     computed: {
-        ...mapGetters(['user'])
+        ...mapGetters(['user', 'isLogin'])
     },
     methods: {
         onPageChange(newPage) {

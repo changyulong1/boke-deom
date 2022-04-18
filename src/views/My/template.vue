@@ -1,5 +1,5 @@
 <template>
-  <el-col :sm="20" id="user">
+  <el-col :sm="20" id="user" v-if="isLogin">
     <router-link :to="`/My`">
       <section class="user-info">
         <el-avatar :size="60" :src="user.avatar" @error="errorHandler">

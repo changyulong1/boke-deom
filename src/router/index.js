@@ -16,18 +16,18 @@ const routes = [
   {
     path: '/Detail/:blogId',//Detail 详情页
     component: () => import('@/views/Detail/template.vue')
-  },  {
+  }, {
     path: '/Edit/:blogId',//编辑页Edit
     component: () => import('@/views/Edit/template.vue'),
     meta: { requiresAuth: true }
-  },  {
+  }, {
     path: '/Create',//创造页Create
     component: () => import('@/views/Create/template.vue'),
     meta: { requiresAuth: true }
-  },  {
+  }, {
     path: '/Register',//注册页  Register
     component: () => import('@/views/Register/template.vue')
-  },  {
+  }, {
     path: '/User/:userId',//使用者 User
     component: () => import('@/views/User/template.vue')
   },
@@ -38,8 +38,7 @@ const routes = [
   },
   {
     path: '/kong',// 我的 My
-    component: () => import('@/views/Kong.vue'),
-    meta: { requiresAuth: true }
+    component: () => import('@/views/kong.vue'),
   },
 ]
 
@@ -49,13 +48,13 @@ const router = new VueRouter({
   routes
 })
 const originalPush = VueRouter.prototype.push
-VueRouter.prototype.push = function push (location) {
+VueRouter.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
 //路由守卫
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    store.dispatch('checkLogin').then(isLogin=>{
+    store.dispatch('checkLogin').then(isLogin => {
       if (!isLogin) {
         next({
           path: '/login',

@@ -27,7 +27,6 @@ export default {
 
   justify-content: space-between;
   .main {
-    position: relative;
     flex: 1;
   }
 }

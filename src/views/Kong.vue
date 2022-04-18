@@ -1,16 +1,10 @@
 <template>
-  <div></div>
+  <div>加载中</div>
 </template>
-
-<script lang="js">
-
+<script lang="ts">
 export default {
-      created(){
-        this.$router.push('/')
-      }
-}
+  created() {
+    this.$router.push("/");
+  },
+};
 </script>
-
-<style lang="scss" scoped>
-
-</style>
