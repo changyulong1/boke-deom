@@ -13,13 +13,14 @@ cd dist
 # echo 'www.example.com' > CNAME
 
 git init
-git add -A
+git add .
 git commit -m 'deploy'
+git remote add origin git@github.com:changyulong1/boke.git
 
 # 部署到 https://<USERNAME>.github.io
 # git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
 
 # 部署到 https://<USERNAME>.github.io/<REPO>
- git push -f git@gitee.com:xiaocao2019/bolg.git master:gh-pages
+git push -u origin master
 
 cd -
