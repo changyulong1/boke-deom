@@ -14,7 +14,7 @@ cd dist
 
 git init
 git add .
-git commit -m '更新4'
+git commit -m '更新优化'
 git remote add origin git@github.com:changyulong1/boke.git
 
 # 部署到 https://<USERNAME>.github.io

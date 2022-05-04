@@ -8,6 +8,7 @@ import 'element-ui/lib/theme-chalk/index.css';
 // import 'github-markdown-css/github-markdown-light.css'
 import '@/assets/cyanosis.scss'
 import 'highlight.js/styles/monokai-sublime.css'
+import '@/assets/index.scss'
 import uilt from '@/helpers/util'
 
 Vue.use(ElementUI);
